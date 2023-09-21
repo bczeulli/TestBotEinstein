@@ -2,10 +2,28 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <title>Test Bot</title>
 </head>
 <body>
+    <script type='text/javascript'>
+        function initEmbeddedMessaging() {
+            try {
+                embeddedservice_bootstrap.settings.language = 'pt_BR'; // For example, enter 'en' or 'en-US'
     
+                embeddedservice_bootstrap.init(
+                    '00DDN0000008fos',
+                    'Chat_Bot',
+                    'https://powpaybra--dev.sandbox.my.site.com/ESWChatBot1695302969819',
+                    {
+                        scrt2URL: 'https://powpaybra--dev.sandbox.my.salesforce-scrt.com'
+                    }
+                );
+            } catch (err) {
+                console.error('Error loading Embedded Messaging: ', err);
+            }
+        };
+    </script>
+    <script type='text/javascript' src='https://powpaybra--dev.sandbox.my.site.com/ESWChatBot1695302969819/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 </body>
 </html>
